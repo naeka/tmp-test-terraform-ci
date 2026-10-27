@@ -1,0 +1,5 @@
+# The last matching pattern takes precedence.
+* @naeka/tmp-test-devops-admin
+
+# Non-sensitive modules: no code owner, any reviewer with write access can approve.
+/infrastructure/tmp-test/dns/
