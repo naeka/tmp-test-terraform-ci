@@ -4,5 +4,5 @@ terraform {
 
 # No provider and a local state: this module only exercises the CI workflows.
 resource "terraform_data" "probe" {
-  input = "alpha-v2"
+  input="alpha-v3"
 }
