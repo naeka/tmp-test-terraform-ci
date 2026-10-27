@@ -1,0 +1,21 @@
+# Scenario 7 only: a job outside main that targets terraform-apply, triggered by a branch push and by a tag named main.
+name: tmp-test-apply-probe
+
+on:
+  push:
+    branches: [tmp-test-probe]
+    tags: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    environment: terraform-apply
+    steps:
+      - env:
+          KEY: ${{ secrets.TF_PLAN_SIGNING_KEY }}
+        run: |
+          echo "ref=$GITHUB_REF"
+          if [ -n "$KEY" ]; then echo "PROBE_SECRET_RECEIVED"; else echo "PROBE_SECRET_EMPTY"; fi
