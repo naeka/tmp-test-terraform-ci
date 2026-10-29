@@ -43,7 +43,7 @@ permissions:
   actions: read
 
 env:
-  TERRAFORM_VERSION: "1.17.0"
+  TERRAFORM_VERSION: "1.17.1"
 
 jobs:
   # Static checks need no credentials and run before the plan.

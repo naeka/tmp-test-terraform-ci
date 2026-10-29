@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "enabledManagers": ["terraform", "github-actions"],
+  "packageRules": [
+    {
+      "matchManagers": ["terraform"],
+      "rangeStrategy": "update-lockfile"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "dependencyDashboardApproval": true
+    }
+  ],
+  "postUpgradeTasks": {
+    "commands": ["terraform-docs markdown table --output-file README.md --output-mode inject {{{packageFileDir}}}"],
+    "fileFilters": ["infrastructure/**/README.md"],
+    "executionMode": "update"
+  }
+}
