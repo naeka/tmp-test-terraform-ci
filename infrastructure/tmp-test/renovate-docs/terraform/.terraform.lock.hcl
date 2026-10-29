@@ -3,7 +3,7 @@
 
 provider "registry.terraform.io/hashicorp/random" {
   version     = "3.6.0"
-  constraints = ">= 3.0"
+  constraints = ">= 3.0.0"
   hashes = [
     "h1:I8MBeauYA8J8yheLJ8oSMWqB0kovn16dF/wKZ1QTdkk=",
     "h1:R5Ucn26riKIEijcsiOMBR3uOAjuOMfI1x7XvH4P6B1w=",
